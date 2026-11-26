@@ -2,7 +2,7 @@
 
 ## Versiones disponibles en los archivos del equipo
 
-| Archivo original | Destino propuesto | Descripción |
+| Archivo original | Archivo en el repositorio | Descripción |
 |---|---|---|
 | MAIN_UN_NUCLEO.py | MAIN_UN_NUCLEO.py | Integrada: 100 mm, PIO, HTTPS, un núcleo y seis tareas |
 | MAIN_DOS_NUCLEOS.py | MAIN_DOS_NUCLEOS.py | Variante seleccionable de uno/dos núcleos con _thread y PIO |
@@ -15,7 +15,7 @@ MicroPython para Pico 2 W con machine, rp2, network, time, gc, ujson y asyncio (
 ## Configuración
 El programa principal importa WIFI_NOMBRE, WIFI_CLAVE, AIO_USUARIO y AIO_KEY desde credenciales.py. Usar credenciales.example.py como plantilla y conservar el archivo real fuera del control de versiones. Los feeds existentes se llaman aforo y aforo-lleno. No ejecutar la prueba Wi-Fi contra el dashboard de producción durante una demo: publica un dato ficticio.
 
-La versión integrada y local deben ejecutarse por separado. Los tres archivos fuente han pasado una revisión sintáctica en CPython; esto no acredita ejecución en MicroPython ni funcionamiento físico.
+La versión integrada y local deben ejecutarse por separado. Los archivos fuente se encuentran en el repositorio. La revisión sintáctica previa no acredita ejecución en MicroPython ni funcionamiento físico.
 
 ## Observaciones de revisión
 - La implementación actual está en un archivo con clases y funciones; falta evaluar separación en módulos sin alterar la versión probada.
