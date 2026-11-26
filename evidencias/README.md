@@ -1,9 +1,9 @@
 # Evidencias
 
-Inventario basado en el informe y las diapositivas entregados:
-- Informe p. 1 / diapositiva 3: marco ensamblado.
-- Informe p. 3: arranque y calibración de la versión anterior de 87 mm.
-- Informe p. 4 / diapositiva 8: dashboard con aforo 5 y estado de aforo completo 1.
-- Informe p. 5: registros de salidas consecutivas y publicación HTTP 200 de ambos feeds (versión integrada).
+Archivos recibidos: cinco fotos de arquitectura/prototipo; una foto de circuito integrado duplicada de la segunda foto; diagrama de circuito; simulación virtual; video de demo. El informe incluye capturas de calibración anterior, dashboard, salidas Thonny y publicación HTTPS.
 
-Pendiente incorporar fotografías y capturas extraídas, video de respaldo de máximo 2 minutos, registros de pruebas por caso y medición del reto PIO. No subir credenciales ni datos personales innecesarios.
+La simulación virtual muestra módulos ultrasónicos representativos; no es el cableado definitivo de los dos VL53L0X. El diagrama de circuito y la tabla del informe son las referencias lógicas para el montaje real.
+
+Video original: 133,77 s; la guía establece máximo 120 s. Revisar la versión abreviada antes de entregar. Las capturas de medición dual citadas en el README recibido no están entre los archivos suministrados. Registrar ensayo comparativo, calibración actual y reconexión.
+
+No publicar credenciales o información personal innecesaria.
