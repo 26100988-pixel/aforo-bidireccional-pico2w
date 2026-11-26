@@ -1,33 +1,32 @@
 # Documentación técnica
 
-## Arquitectura
+## Arquitectura de un núcleo
+El informe y PPT describen seis tareas asyncio: sensores/conteo, PIR, barrera, alarma, monitor y Adafruit IO. PIO genera la onda del buzzer; HTTPS y lecturas I²C siguen siendo síncronas.
 
+## Variante de dos núcleos
 ```mermaid
 flowchart LR
-  A["VL53L0X A y B · I²C"] --> P["RP2350 · MicroPython / asyncio"]
-  B["PIR · GPIO"] --> P
-  P --> C["Servo · PWM 50 Hz"]
-  P --> D["Buzzer · PIO 1000 Hz"]
-  P --> E["Wi-Fi / HTTPS · Adafruit IO"]
-  E --> F["Dashboard y alerta"]
+  A["Sensores VL53L0X y PIR"] --> N1["Núcleo 1: adquisición y conteo"]
+  N1 --> S["Servo PWM y buzzer PIO"]
+  N1 --> L["Instantánea con candado"]
+  L --> N0["Núcleo 0: monitor y nube"]
+  N0 --> D["Adafruit IO"]
 ```
+MAIN_DOS_NUCLEOS.py permite comparar DOS_NUCLEOS=False y True. El intervalo de pausa entre ciclos es 40 ms, no el intervalo real total.
 
-Las seis tareas de la versión integrada son sensores/conteo, PIR, barrera, alarma, monitor y Adafruit IO. Se ejecutan cooperativamente en un núcleo, no en dos. La pausa de adquisición es de 40 ms más el tiempo real de lecturas y otras tareas.
+## Reto de arquitectura
+PIO: 32 ciclos altos y 32 bajos a 64000 ciclos/s = 1000 Hz teóricos. No hay comparación medida antes/después de PIO.
+Dos núcleos: el código registra ciclos, máximo intervalo entre inicios, máxima duración de ciclo y fallos de sensor. El README recibido menciona 124 ms, 83 ms y 0 fallos en modo dual; no hay captura específica ni línea base en el ZIP. No afirmar mejora. Ensayar el mismo archivo con ambos modos, bajo las mismas condiciones y registrar los datos reales en la [plantilla de pruebas](resultados_1_vs_2_nucleos.csv).
 
-## Reto PIO
-La máquina de estados del buzzer genera 32 ciclos altos y 32 bajos a 64 000 ciclos/s: 1000 Hz teóricos. El servo conserva PWM de 50 Hz. PIO delega la generación de flancos; 2000 cambios/s serían necesarios para una onda cuadrada equivalente por software. La mejora real de CPU/latencia no ha sido medida. La guía requiere comparación antes/después (10 puntos de 60).
-
-Propuesta de ensayo pendiente: comparar dos versiones con la misma carga, configuración y tono, una con generación por CPU y otra con PIO; registrar intervalos de adquisición y dispersión durante un aviso, con varias repeticiones. No confundir el programa local de buzzer digital con un ensayo controlado de onda de 1000 Hz.
-
-## Resultados
-| Prueba | Resultado reportado | Límite de evidencia |
+## Evidencia y resultados
+| Prueba | Resultado | Alcance |
 |---|---|---|
-| Reconocimiento de dirección | 47/50 correctos (94 %) | Sin desglose por sentido ni registro individual |
-| Límites de ocupación | Respuesta correcta con 3, 5 y 7 | Sin número de repeticiones |
-| Adafruit IO | HTTP 200 en ambos feeds; dashboard 5/5 y estado 1 | Capturas del informe pp. 4–5 |
-| Presencia | 80–120 ms teóricos | No medidos |
-| Calibración anterior | 87 mm: fondo A 114 mm, B 135 mm | No equivale a la calibración integrada de 100 mm |
-| PIO antes/después | Pendiente | No se dispone de medición |
-| Reconexión Wi-Fi y consumo | Pendientes | No se dispone de ensayo o instrumento |
+| Dirección | 47/50 (94 %) | Reportado en paper y PPT; sin registro individual |
+| Capacidad | 3, 5 y 7 | Respuesta correcta reportada |
+| Nube | HTTP 200 y dashboard 5/5 | Capturas de la versión de un núcleo |
+| Presencia | 80–120 ms | Teórico |
+| PIO / dual | Sin comparación controlada | Pendiente |
+| Reconexión y calibración 100 mm | Pendiente de documentar | No sustituir por calibración de 87 mm |
 
-Fuentes: informe pp. 2–6, presentación diapositivas 6–10, código integrado y guía pp. 3–8. Deben incorporarse los archivos originales del informe y las diapositivas. 
+## Revisión de entregables
+PDF recibido tiene 7 páginas (guía: 4–6), con referencias en la última. PPT contiene 12 diapositivas. Ambos describen la versión de un núcleo; armonizarlos con el reto final acordado. Declarar uso de IA en paper y verificar códigos universitarios: README recibido y paper discrepan. Video original: 133,77 s, límite 120 s. No inventar resultados.
