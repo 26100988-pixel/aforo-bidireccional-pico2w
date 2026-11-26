@@ -4,7 +4,8 @@
 
 | Archivo original | Destino propuesto | Descripción |
 |---|---|---|
-| MAIN_UN_NUCLEO.py | main.py | Integrada: 100 mm, PIO, HTTPS, un núcleo y seis tareas |
+| MAIN_UN_NUCLEO.py | MAIN_UN_NUCLEO.py | Integrada: 100 mm, PIO, HTTPS, un núcleo y seis tareas |
+| MAIN_DOS_NUCLEOS.py | MAIN_DOS_NUCLEOS.py | Variante seleccionable de uno/dos núcleos con _thread y PIO |
 | Programa_MicroPy_Rasberry_Pi_PICO2W_UN_NUCLEO.py | versiones/local_87mm.py | Anterior: 87 mm, buzzer digital, sin nube |
 | WIFI-LLENAR CREDENCIALES.py | pruebas/prueba_wifi.py | Prueba independiente que publica el valor de prueba 1 |
 
@@ -21,5 +22,5 @@ La versión integrada y local deben ejecutarse por separado. Los tres archivos f
 - Las solicitudes HTTPS y lecturas I²C son síncronas, aunque se usen tareas asyncio.
 - En caso de fallo de sensor, se omite la actualización de los detectores; revisar el reinicio de las confirmaciones y el estado del cruce antes de reanudar.
 - El código evalúa la segunda detección antes de comprobar el timeout; comprobar cruces tardíos.
-- Los TODO de dos núcleos en los originales son históricos: el reto descrito en el informe es PIO, pendiente de medición comparativa.
+- El informe describe PIO y un núcleo. MAIN_DOS_NUCLEOS.py incorpora la variante dual; para comparar usar el mismo archivo con DOS_NUCLEOS=False y True, PIO constante y condiciones equivalentes. La versión dual publica cada 6 s y la anterior cada 12 s. No hay comparación experimental verificada.
 - El firmware original queda sin cambios funcionales hasta que el equipo pruebe las correcciones en la maqueta.
