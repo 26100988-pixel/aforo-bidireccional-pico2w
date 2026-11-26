@@ -29,4 +29,4 @@ Dos núcleos: el código registra ciclos, máximo intervalo entre inicios, máxi
 | Reconexión y calibración 100 mm | Pendiente de documentar | No sustituir por calibración de 87 mm |
 
 ## Revisión de entregables
-PDF recibido tiene 7 páginas (guía: 4–6), con referencias en la última. PPT contiene 12 diapositivas. Ambos describen la versión de un núcleo; armonizarlos con el reto final acordado. Declarar uso de IA en paper y verificar códigos universitarios: README recibido y paper discrepan. Video original: 133,77 s, límite 120 s. No inventar resultados.
+Se prepararon versiones revisadas del paper (6 páginas con referencias y declaración de IA) y PPT (12 diapositivas), distinguiendo resultados históricos de un núcleo y variante seleccionable dual. Se omiten códigos universitarios hasta confirmación. Video editado: aproximadamente 117 s, aceleración del 14 %; comprobar claridad. Los adjuntos corregidos quedan pendientes de carga y validación del equipo. No se han generado mediciones ficticias.
