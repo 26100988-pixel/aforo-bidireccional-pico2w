@@ -34,8 +34,8 @@ El ZIP del equipo contiene 14 STL, 2 proyectos 3MF, diagramas, fotografías, pap
 - Confirmar si el reto evaluado será PIO o dos núcleos; armonizar paper, PPT y código.
 - Medir la comparación antes/después bajo condiciones equivalentes.
 - Validar calibración de 100 mm, reconexión Wi-Fi, alerta remota y casos límite.
-- Reducir el PDF de 7 a 6 páginas como máximo, declarar uso de IA y confirmar códigos de integrantes.
-- Video original: 133,77 s; entregar versión de 120 s o menos revisada por el equipo.
+- Incorporar el paper corregido de 6 páginas, con declaración de uso de IA y descripción de ambos modos; confirmar códigos de integrantes antes de agregarlos.
+- Incorporar video editado de aproximadamente 117 s (aceleración 14 %), verificar claridad y no utilizarlo como medición experimental.
 - Solicitar CAD editable: STL y 3MF no prueban que se disponga del archivo paramétrico original.
 
 Maqueta académica, no sistema de evacuación. No subir contraseñas ni tokens. Los diagramas de conexiones deben verificarse con el montaje real y el docente.
@@ -44,3 +44,6 @@ Maqueta académica, no sistema de evacuación. No subir contraseñas ni tokens. 
 Richard Ernesto Arroyo Torres · Pool Alejandro Villena Romero · Sebastián Sánchez Malca · Alvaro Gonzalo Matias Montero Chacon.
 
 Fuentes: ZIP del equipo (26/11/2026), informe, presentación, firmware y guía del curso. Documentación organizada con asistencia de IA; declarar su utilización en el paper.
+
+## Entregables revisados
+Se preparó un paquete de carga con el paper en Word y PDF (6 páginas), PPT actualizado (12 diapositivas), firmware original, modelos y evidencias. La carga de adjuntos aún debe confirmarse en GitHub. No se inventaron mediciones.
