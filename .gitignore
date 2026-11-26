@@ -231,3 +231,6 @@ config.py
 # Permitir controladores MicroPython dentro de firmware/lib
 !firmware/lib/
 !firmware/lib/**
+
+# Archivo de credenciales importado por el firmware
+credenciales.py
