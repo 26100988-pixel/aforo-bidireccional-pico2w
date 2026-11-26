@@ -32,4 +32,4 @@ El sensor B tiene ajuste de −30 mm y advertencia por desviación superior a 25
 - 1:12:11 p. m.: arranque un núcleo, misma calibración, Wi-Fi y HTTP 200.
 - 1:12:52 p. m.: un núcleo, ciclos 41–269, 1655 ms, 76 ms, 0 fallos.
 
-Las capturas originales fueron facilitadas por el equipo; esta transcripción no las sustituye. La carga de los JPEG y de los binarios actualizados debe verificarse por separado. Las 47/50 direcciones correctas (94 %) del informe previo son una prueba histórica distinta, no un resultado de este ensayo.
+Las capturas originales fueron facilitadas por el equipo; esta transcripción no las sustituye. Los cinco JPEG y las nuevas versiones del paper y PPT están cargados en main. Ver [capturas originales](../evidencias/mediciones/). Las 47/50 direcciones correctas (94 %) del informe previo son una prueba histórica distinta, no un resultado de este ensayo.

@@ -52,6 +52,6 @@ Fuentes: ZIP del equipo (26/11/2026), informe, presentación, firmware y guía d
 - [Diagrama de conexiones](hardware/diagrama_conexiones.png).
 - [Firmware de un núcleo](firmware/MAIN_UN_NUCLEO.py) y [variante de dos núcleos](firmware/MAIN_DOS_NUCLEOS.py).
 - [Modelos STL](modelado_3d/STL/) y [proyectos 3MF](modelado_3d/3MF/).
-- [Mediciones experimentales](documentacion/resultados_1_vs_2_nucleos.csv) · [Análisis y gráfico](documentacion/RESULTADOS_EXPERIMENTALES.md). Las versiones anteriores del paper y PPT deben sustituirse por las actualizadas.
+- [Mediciones experimentales](documentacion/resultados_1_vs_2_nucleos.csv) · [Análisis y gráfico](documentacion/RESULTADOS_EXPERIMENTALES.md). Las nuevas versiones del paper y PPT y las [cinco capturas de Thonny](evidencias/mediciones/) están cargadas.
 
-Carga comprobada en main el 26/11/2026; la presencia de archivos no acredita la ejecución física del prototipo.
+Carga final de los ocho archivos adicionales comprobada en main el 26/11/2026. Las capturas documentan la ejecución observada; no certifican otras pruebas físicas.

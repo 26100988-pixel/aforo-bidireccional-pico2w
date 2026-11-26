@@ -1,6 +1,6 @@
 # Revisión de entrega
 
-- Paper corregido: seis páginas, con referencias y declaración de uso de IA. Presentación corregida: 12 diapositivas. Se describe el firmware de uno y dos núcleos, distinguiendo resultados históricos y arquitectura dual; las nuevas mediciones constan en RESULTADOS_EXPERIMENTALES.md y el CSV, y deben incorporarse a los archivos binarios actualizados. Los códigos universitarios se omitieron por discrepancias y privacidad; verificar los datos antes de entregar si el docente los exige.
+- Paper corregido: seis páginas, con referencias y declaración de uso de IA. Presentación corregida: 12 diapositivas. Se describe el firmware de uno y dos núcleos, distinguiendo resultados históricos y arquitectura dual; las nuevas mediciones constan en RESULTADOS_EXPERIMENTALES.md y el CSV, y se cargaron los archivos binarios actualizados. Los códigos universitarios se omitieron por discrepancias y privacidad; verificar los datos antes de entregar si el docente los exige.
 - Video abreviado a aproximadamente 117 s mediante aceleración del 14 %. Revisar la claridad; no usar para medir latencia.
 - Se conservaron los programas originales para evitar cambiar el comportamiento de la maqueta sin pruebas físicas. Los nombres de las versiones y la configuración de ejemplo no contienen credenciales reales.
 - El diagrama debe cotejarse con el montaje físico. La simulación virtual es referencial y no representa los sensores ToF reales.
@@ -16,4 +16,4 @@
 
 ## Carga en GitHub
 
-Descomprimir el paquete y cargar sus cinco carpetas en la raíz del repositorio existente. No subir el ZIP como sustituto de los archivos. No reemplazar los README ni el .gitignore existentes. Las credenciales reales deben permanecer fuera del repositorio. Confirmar que GitHub conserva los archivos originales y las versiones revisadas del paper y PPT.
+Carga comprobada el 26/11/2026: cinco capturas nuevas, paper DOCX y PDF, y PPTX actualizados en sus rutas. Los originales de firmware se conservan. Mantener las credenciales reales fuera del repositorio.
