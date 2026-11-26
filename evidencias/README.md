@@ -7,3 +7,6 @@ La simulación virtual muestra módulos ultrasónicos representativos; no es el 
 Video original: 133,77 s; la guía establece máximo 120 s. Revisar la versión abreviada antes de entregar. Las capturas de medición dual citadas en el README recibido no están entre los archivos suministrados. Registrar ensayo comparativo, calibración actual y reconexión.
 
 No publicar credenciales o información personal innecesaria.
+
+## Estado de carga
+Se verificó la presencia de las cinco fotografías, las capturas de funcionamiento, la imagen del dashboard y el video demo_117s.mp4 en main. Queda pendiente revisar la claridad del video y aportar evidencias experimentales adicionales.
