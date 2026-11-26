@@ -6,33 +6,41 @@ Proyecto 13 · Arquitectura del Computador I (16953) · Universidad ESAN · 2026
 Registrar entradas y salidas en una maqueta de acceso único, calcular la ocupación, controlar una barrera y permitir la consulta remota mediante Adafruit IO. Usuario objetivo: responsable de un aula o laboratorio.
 
 ## Funcionamiento
-Dos VL53L0X comparten I²C1; sus direcciones son 0x30 y 0x31. A → B suma una entrada y B → A resta una salida. Se confirman tres lecturas, se espera liberar ambos sensores y se cancela un intento incompleto tras 5 s. El PIR informa movimiento sin decidir la dirección. El límite predeterminado es cinco ocupantes. El servo SG90 controla la barrera y el buzzer genera avisos mediante PIO de 1000 Hz.
+Dos VL53L0X comparten I²C1 (0x30 y 0x31). A → B suma y B → A resta. Se requieren tres confirmaciones, liberación de ambos sensores y un plazo configurado de 5 s. El PIR informa movimiento sin determinar dirección. Capacidad predeterminada: 5. Servo SG90 por PWM de 50 Hz; buzzer por PIO a 1000 Hz. La nube recibe los feeds `aforo` y `aforo-lleno` por HTTPS.
 
-La versión integrada usa un núcleo, MicroPython, seis tareas cooperativas con asyncio y HTTPS hacia los feeds `aforo` y `aforo-lleno` de Adafruit IO.
+## Versiones de firmware
+| Versión | Arquitectura | Estado de evidencia |
+|---|---|---|
+| MAIN_UN_NUCLEO.py | Un núcleo, seis tareas asyncio, PIO | Versión descrita en el paper y PPT, con capturas HTTP 200 |
+| MAIN_DOS_NUCLEOS.py | Modo seleccionable: un núcleo o dos mediante _thread; PIO en ambos | Código recibido y sintaxis revisada; falta confirmar ejecución y comparación controlada |
+| Local de 87 mm | Un núcleo, buzzer digital, sin nube | Histórica, no corresponde a la configuración integrada |
 
-## Organización
+En modo dual, el núcleo 0 gestiona la nube y el monitor, y el núcleo 1 realiza adquisición y actuación. Una instantánea protegida por candado comunica los estados. La mejora de rendimiento no está demostrada todavía.
+
+## Repositorio
 - [Firmware](firmware/): versiones, dependencias y configuración.
-- [Hardware](hardware/): componentes y diagrama lógico de conexiones.
-- [Modelado 3D](modelado_3d/): descripción de las 14 piezas y archivos pendientes.
-- [Documentación técnica](documentacion/): arquitectura, PIO y resultados.
-- [Evidencias](evidencias/): inventario de fotografías y capturas.
+- [Hardware](hardware/): tabla de pines y diagrama lógico.
+- [Modelado 3D](modelado_3d/): inventario de piezas y archivos.
+- [Documentación](documentacion/): arquitectura, pruebas y limitaciones.
+- [Evidencias](evidencias/): inventario del prototipo, dashboard y video.
 
-## Resultados reportados
-47 de 50 cruces correctos (94 %). Tres fallos sin desglose. Se reporta respuesta correcta con límites de 3, 5 y 7. El informe y la presentación incluyen evidencia del marco ensamblado, dashboard con aforo 5 y respuestas HTTP 200 de ambos feeds. La confirmación de presencia de 80–120 ms es teórica, no una latencia medida.
+## Resultados y estado
+47 de 50 cruces correctos (94 %) según el informe; no hay desglose individual. El dashboard y consola documentan aforo 5 y HTTP 200. Los 80–120 ms son una estimación teórica, no una medición. El README recibido cita máximos de 124 ms entre ciclos y 83 ms por ciclo en dos núcleos, pero no se adjuntó la captura correspondiente ni una línea base de un núcleo: datos preliminares no verificados.
 
-## Estado y límites
-- [x] Documentar arquitectura, componentes, conexiones y resultados reportados.
-- [x] Identificar PIO como reto implementado en la versión integrada.
-- [ ] Incorporar y comprobar en la placa el firmware original y la librería compatible vl53l0x.py.
-- [ ] Incorporar CAD/STL/3MF originales, informe y presentación.
-- [ ] Registrar calibración del montaje de 100 mm y comprobar reconexión Wi-Fi.
-- [ ] Medir antes/después de PIO y registrar datos reales.
-- [ ] Verificar modularidad, casos de falsos positivos y demo final.
+El ZIP del equipo contiene 14 STL, 2 proyectos 3MF, diagramas, fotografías, paper, PPT y video. Los archivos fuente y binarios deben incorporarse mediante la carga del paquete organizado.
 
-El sistema es una maqueta académica, no un dispositivo de seguridad o evacuación. La ocupación no persiste tras reinicio y HTTPS puede bloquear temporalmente las tareas. No subir contraseñas o tokens. Ver [firmware](firmware/) para la configuración.
+## Pendientes antes de entregar
+- Incorporar archivos originales y controlador exacto vl53l0x.py.
+- Confirmar si el reto evaluado será PIO o dos núcleos; armonizar paper, PPT y código.
+- Medir la comparación antes/después bajo condiciones equivalentes.
+- Validar calibración de 100 mm, reconexión Wi-Fi, alerta remota y casos límite.
+- Reducir el PDF de 7 a 6 páginas como máximo, declarar uso de IA y confirmar códigos de integrantes.
+- Video original: 133,77 s; entregar versión de 120 s o menos revisada por el equipo.
+- Solicitar CAD editable: STL y 3MF no prueban que se disponga del archivo paramétrico original.
+
+Maqueta académica, no sistema de evacuación. No subir contraseñas ni tokens. Los diagramas de conexiones deben verificarse con el montaje real y el docente.
 
 ## Equipo
 Richard Ernesto Arroyo Torres · Pool Alejandro Villena Romero · Sebastián Sánchez Malca · Alvaro Gonzalo Matias Montero Chacon.
 
-## Fuentes
-Informe_modulo_13.docx, Control_de_aforo.pptx, MAIN_UN_NUCLEO.py, versión local de 87 mm y Guía del Proyecto Final Pico 2 W 2026-2. Documentación organizada con asistencia de IA; validar con el equipo y declarar el uso en el paper.
+Fuentes: ZIP del equipo (26/11/2026), informe, presentación, firmware y guía del curso. Documentación organizada con asistencia de IA; declarar su utilización en el paper.
