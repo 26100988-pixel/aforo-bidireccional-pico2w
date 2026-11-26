@@ -10,7 +10,7 @@
 | WIFI-LLENAR CREDENCIALES.py | pruebas/prueba_wifi.py | Prueba independiente que publica el valor de prueba 1 |
 
 ## Dependencias
-MicroPython para Pico 2 W con machine, rp2, network, time, gc, ujson y asyncio (o uasyncio); requests (o urequests); controlador vl53l0x.py compatible con range, set_address e io_timeout_ms. Falta el controlador exacto y la versión del firmware probada por el equipo.
+MicroPython para Pico 2 W con machine, rp2, network, time, gc, ujson y asyncio (o uasyncio); requests (o urequests); controlador vl53l0x.py compatible con range, set_address e io_timeout_ms. El [controlador exacto](vl53l0x.py) recibido del equipo está incluido; se verificó coincidencia byte a byte con el cuerpo del controlador de kapetan/MicroPython_VL53L0X. Se conserva su [licencia MIT y atribución](LICENSE_VL53L0X.txt). Falta confirmar la versión exacta de MicroPython. El driver utiliza buffers compartidos y no es seguro para accesos simultáneos desde distintos hilos; el modo dual asigna las lecturas al núcleo 1.
 
 ## Configuración
 El programa principal importa WIFI_NOMBRE, WIFI_CLAVE, AIO_USUARIO y AIO_KEY desde credenciales.py. Usar credenciales.example.py como plantilla y conservar el archivo real fuera del control de versiones. Los feeds existentes se llaman aforo y aforo-lleno. No ejecutar la prueba Wi-Fi contra el dashboard de producción durante una demo: publica un dato ficticio.
@@ -22,5 +22,5 @@ La versión integrada y local deben ejecutarse por separado. Los archivos fuente
 - Las solicitudes HTTPS y lecturas I²C son síncronas, aunque se usen tareas asyncio.
 - En caso de fallo de sensor, se omite la actualización de los detectores; revisar el reinicio de las confirmaciones y el estado del cruce antes de reanudar.
 - El código evalúa la segunda detección antes de comprobar el timeout; comprobar cruces tardíos.
-- El informe describe PIO y un núcleo. MAIN_DOS_NUCLEOS.py incorpora la variante dual; para comparar usar el mismo archivo con DOS_NUCLEOS=False y True, PIO constante y condiciones equivalentes. La versión dual publica cada 6 s y la anterior cada 12 s. No hay comparación experimental verificada.
+- El informe describe PIO y un núcleo. MAIN_DOS_NUCLEOS.py incorpora la variante dual; para comparar usar el mismo archivo con DOS_NUCLEOS=False y True, PIO constante y condiciones equivalentes. La versión dual publica cada 6 s y la anterior cada 12 s. Las nuevas capturas confirman la ejecución del mismo firmware en ambos modos; ver [resultados preliminares](../documentacion/RESULTADOS_EXPERIMENTALES.md).
 - El firmware original queda sin cambios funcionales hasta que el equipo pruebe las correcciones en la maqueta.
