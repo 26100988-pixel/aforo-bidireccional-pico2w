@@ -221,3 +221,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Credenciales locales del proyecto IoT
+secrets.py
+config.py
+.env.*
+!.env.example
+
+# Permitir controladores MicroPython dentro de firmware/lib
+!firmware/lib/
+!firmware/lib/**
