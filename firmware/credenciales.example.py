@@ -1,4 +1,4 @@
-# Plantilla: copiar localmente como credenciales.py; nunca subir valores reales.
+# Copiar localmente a credenciales.py; no subir valores reales.
 WIFI_NOMBRE = 'REEMPLAZA_CON_NOMBRE_WIFI'
 WIFI_CLAVE = 'REEMPLAZA_CON_CLAVE_WIFI'
 AIO_USUARIO = 'REEMPLAZA_CON_USUARIO_ADAFRUIT'
