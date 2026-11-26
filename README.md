@@ -27,15 +27,15 @@ En modo dual, el núcleo 0 gestiona la nube y el monitor, y el núcleo 1 realiza
 ## Resultados y estado
 47 de 50 cruces correctos (94 %) según el informe; no hay desglose individual. El dashboard y consola documentan aforo 5 y HTTP 200. Los 80–120 ms son una estimación teórica, no una medición. El README recibido cita máximos de 124 ms entre ciclos y 83 ms por ciclo en dos núcleos, pero no se adjuntó la captura correspondiente ni una línea base de un núcleo: datos preliminares no verificados.
 
-El ZIP del equipo contiene 14 STL, 2 proyectos 3MF, diagramas, fotografías, paper, PPT y video. Los archivos fuente y binarios deben incorporarse mediante la carga del paquete organizado.
+El repositorio contiene los programas fuente, 14 STL, 2 proyectos 3MF, diagramas, fotografías, paper, PPT y video. Se comprobó su presencia en la rama main.
 
 ## Pendientes antes de entregar
-- Incorporar archivos originales y controlador exacto vl53l0x.py.
-- Confirmar si el reto evaluado será PIO o dos núcleos; armonizar paper, PPT y código.
+- Incorporar el controlador exacto vl53l0x.py y confirmar la versión de MicroPython.
+- Confirmar con el docente el reto evaluado y validar que los entregables revisados coincidan con la versión demostrada.
 - Medir la comparación antes/después bajo condiciones equivalentes.
 - Validar calibración de 100 mm, reconexión Wi-Fi, alerta remota y casos límite.
-- Incorporar el paper corregido de 6 páginas, con declaración de uso de IA y descripción de ambos modos; confirmar códigos de integrantes antes de agregarlos.
-- Incorporar video editado de aproximadamente 117 s (aceleración 14 %), verificar claridad y no utilizarlo como medición experimental.
+- Confirmar códigos de integrantes si son requeridos y revisar el paper corregido con el equipo.
+- Verificar claridad del video editado de aproximadamente 117 s (aceleración 14 %); no utilizarlo como medición experimental.
 - Solicitar CAD editable: STL y 3MF no prueban que se disponga del archivo paramétrico original.
 
 Maqueta académica, no sistema de evacuación. No subir contraseñas ni tokens. Los diagramas de conexiones deben verificarse con el montaje real y el docente.
@@ -46,4 +46,12 @@ Richard Ernesto Arroyo Torres · Pool Alejandro Villena Romero · Sebastián Sá
 Fuentes: ZIP del equipo (26/11/2026), informe, presentación, firmware y guía del curso. Documentación organizada con asistencia de IA; declarar su utilización en el paper.
 
 ## Entregables revisados
-Se preparó un paquete de carga con el paper en Word y PDF (6 páginas), PPT actualizado (12 diapositivas), firmware original, modelos y evidencias. La carga de adjuntos aún debe confirmarse en GitHub. No se inventaron mediciones.
+- [Paper PDF](documentacion/paper/INFORME_MODULO_13_AFORO_BIDIRECCIONAL.pdf) y [Word editable](documentacion/paper/INFORME_MODULO_13_AFORO_BIDIRECCIONAL.docx).
+- [Presentación](documentacion/presentacion/Control_de_aforo.pptx).
+- [Video de demostración](evidencias/video/demo_117s.mp4).
+- [Diagrama de conexiones](hardware/diagrama_conexiones.png).
+- [Firmware de un núcleo](firmware/MAIN_UN_NUCLEO.py) y [variante de dos núcleos](firmware/MAIN_DOS_NUCLEOS.py).
+- [Modelos STL](modelado_3d/STL/) y [proyectos 3MF](modelado_3d/3MF/).
+- [Plantilla de mediciones](documentacion/resultados_1_vs_2_nucleos.csv): pendiente de completar con resultados reales.
+
+Carga comprobada en main el 26/11/2026; la presencia de archivos no acredita la ejecución física del prototipo.
